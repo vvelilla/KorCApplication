@@ -39,7 +39,6 @@ public class KorCService {
 
     public KorCType GetKorCTypeDay(Calendar calendar)
     {
-
         int day = calendar.get(Calendar.DAY_OF_WEEK);
         {
             if (day!= Calendar.SATURDAY && day!=Calendar.SUNDAY) {
@@ -48,11 +47,9 @@ public class KorCService {
         }
 
         int week = DateService.GetNumberOfWeek(calendar);
-        if ((week%2)==0)
-        {
+        if ((week%2)==0){
             return KorCType.CUPS;
-        }else
-        {
+        }else{
             return KorCType.KIDS;
         }
     }

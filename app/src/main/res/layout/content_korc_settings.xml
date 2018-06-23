@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cpny.korc.korcapp.KorcSettingsActivity"
+    tools:showIn="@layout/activity_korc_settings">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/background_dark"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/currentMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:paddingVertical="20dp"
+            android:text="Semana actual"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"></TextView>
+
+         <RadioGroup
+             android:id="@+id/radioGroup1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" >
+
+              <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_cocktail_darkgrey_24" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:clickable="false"
+                      android:text="Kids"
+                      android:textColor="@android:color/background_light"></TextView>
+        </LinearLayout>
+
+              <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_crying_baby_darkgrey_24" />
+
+                  <TextView
+
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:clickable="false"
+                      android:text="Cups"
+                      android:textColor="@android:color/background_light">
+
+                  </TextView>
+
+        </LinearLayout>
+
+         </RadioGroup>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

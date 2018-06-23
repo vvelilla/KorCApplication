@@ -21,6 +21,7 @@
         <item name="colorButtonNormal">@color/colorBlack</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
+
     <style name="CupButton" parent="Theme.AppCompat">
         <item name="colorButtonNormal">@color/colorBlack</item>
         <item name="colorControlHighlight">@color/colorAccent</item>

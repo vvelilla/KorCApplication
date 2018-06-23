@@ -1,7 +1,7 @@
 package cpny.korc.korcapp;
 
-
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,17 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
 import java.util.Locale;
 import cpny.korc.korcapp.adapters.SimpleCalendarGridCellAdapterButtons;
@@ -36,7 +34,6 @@ public class SimpleCalendarViewActivity extends AppCompatActivity implements OnC
     private int month, year;
     private final DateFormat dateFormatter = new DateFormat();
     private Calendar _calendar;
-
     private static final String dateTemplate = "MMMM yyyy";
 
     Calendar calendarPick = Calendar.getInstance();
@@ -52,7 +49,6 @@ public class SimpleCalendarViewActivity extends AppCompatActivity implements OnC
             calendarPick.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateSelectedDate();
         }
-
     };
 
     private void updateSelectedDate() {
@@ -147,7 +143,7 @@ public class SimpleCalendarViewActivity extends AppCompatActivity implements OnC
             {
                 month--;
             }
-            Log.d(tag, "Setting Prev Month in SimpleCalendarGridCellAdapter: " + "Month: " + month + " Year: " + year);
+            Log.d(tag, "Setting Prev Month: " + "Month: " + month + " Year: " + year);
             setGridCellAdapterToDate(month, year);
         }
         else if (v == nextMonth)
@@ -161,7 +157,7 @@ public class SimpleCalendarViewActivity extends AppCompatActivity implements OnC
             {
                 month++;
             }
-            Log.d(tag, "Setting Next Month in SimpleCalendarGridCellAdapter: " + "Month: " + month + " Year: " + year);
+            Log.d(tag, "Setting Next Month: " + "Month: " + month + " Year: " + year);
             setGridCellAdapterToDate(month, year);
         }
 //        else if (v==selectedDayMonthYear)
@@ -180,5 +176,32 @@ public class SimpleCalendarViewActivity extends AppCompatActivity implements OnC
         super.onDestroy();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            showSettingsActivity();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    protected void showSettingsActivity() {
+        Intent myIntent = new Intent(SimpleCalendarViewActivity.this,
+                KorcSettingsActivity.class);
+        startActivity(myIntent);
+    }
 
 }

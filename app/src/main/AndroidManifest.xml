@@ -30,6 +30,13 @@
         <activity
             android:name=".training.CustomGridViewActivity"
             android:label="@string/title_activity_custom_grid_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TestSettingsActivity"
+            android:label="@string/title_activity_test_settings" />
+        <activity
+            android:name=".KorcSettingsActivity"
+            android:label="@string/title_activity_korc_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
